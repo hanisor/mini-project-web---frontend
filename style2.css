@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+/* Reset CSS */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: #558257;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+p {
+    text-align: justify;
+}
+
+
+main {
+    padding-top: 80px; /* Adjust padding top */
+    padding-bottom: 50px; /* Adjust padding bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center the main element horizontally */
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap to the next row */
+    justify-content: center; /* Center the columns horizontally */
+    margin: 0 auto; /* Set horizontal margins to auto */
+    padding: 0; /* Reset padding */
+    max-width: 1200px; /* Adjust maximum width as needed */
+}
+
+
+.col {
+    flex: 1 0 100%; /* Each column takes 45% width */
+    max-width: calc(50% - 40px); /* Limit the width of each column */
+    margin: 10px; /* Reduce the margin to 10px */
+}
+
+
+
+.content-container {
+    margin-bottom: 40px; /* Add margin between content and cards */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards horizontally */
+    margin: 0 auto; /* Center the card container horizontally */
+    max-width: 800px; /* Limit maximum width as needed */
+}
+
+.card h5 {
+    margin-bottom: 10px;
+    color: #558257;
+    font-size: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+    text-align: center; /* Center align text */
+    padding: 20px; /* Add padding */
+}
+
+.card-wrapper {
+    margin: 20px; /* Adjust margin to provide spacing between cards */
+}
+
+.card {
+    
+    background-color: #f5f5f5;
+    padding: 40px 20px; /* Adjust padding to increase size and add space */
+    border-radius: 10px;
+    text-align: justify, center; /* Justify the content inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%; /* Set card width to 100% */
+    max-width: 400px; /* Limit maximum card width */
+    margin: 20px; /* Add margin to provide spacing between cards */
+}
+
+
+.card p {
+    color: #666;
+    text-align: justify; /* Ensure text alignment is justified */
+    margin-bottom: 20px; /* Add margin below the paragraph */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px; /* Increase padding to add space around the button text */
+    margin-top: 20px; /* Add margin to separate button from text */
+    background-color: #558257;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4d6e4b;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards horizontally */
+    margin: 0 -20px; /* Adjust negative margin to prevent overlap */
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #558257; /* Background color */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Adjust padding */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to bottom */
+    width: 100%; /* Full width */
+    text-align: center;
+}
+
+
+/* Adjust the size of the image */
+.main-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Add some margin at the bottom */
+}
+
+
