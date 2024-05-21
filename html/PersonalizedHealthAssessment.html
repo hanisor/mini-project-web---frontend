@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Health Assessment</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">
+            <span class="healthy">Healthy</span>
+            <span class="habits">Habits</span>
+        </h2>
+        <nav class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="PersonalizedHealthAssessment.html">Personal Health Assessment</a>
+            <a href="#">Meal Planning</a>
+            <a href="#">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="#">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="assessment-title">Personalized Health Assessment</h2>
+            <form id="health-assessment-form">
+                <div class="form-group">
+                    <label for="height">Height (m):</label>
+                    <input type="number" id="height" name="height" step="0.01" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" step="0.1" min="0" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="goals">Goals:</label>
+                    <select id="goals" name="goals" required>
+                        <option value="">Select...</option>
+                        <option value="strength">Strength</option>
+                        <option value="flexibility">Flexibility</option>
+                        <option value="cardio">Cardio</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmi">BMI(kg/m2):</label>
+                    <input type="text" id="bmi" name="bmi" readonly>
+                    <!-- Include BMI status here if needed -->
+                </div>
+
+                <div class="form-group">
+                    <label for="bmiStatus">BMI Status:</label>
+                    <input type="text" id="bmiStatus" name="bmiStatus" readonly>
+                    <!-- Include BMI status here if needed -->
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
+    </footer>
+
+    <!-- Include the JavaScript file -->
+    <script src="bmiCalculator.js"></script>
+</body>
+</html>

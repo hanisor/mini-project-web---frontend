@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: #558257;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+main {
+    padding-top: 150px; /* Adjust as needed to create space for the header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Text color */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #558257; /* Background color */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Adjust padding */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to bottom */
+    width: 100%; /* Full width */
+    text-align: center;
+}
+
+.container {
+    width: 90%; /* Set width to 90% of the viewport width */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #558257;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"],
+select,
+input[type="text"] { /* Adjust the size of input[type="text"] */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #ffffff; /* Green background color */
+    color: #000000; /* Black text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4d6e4b;
+}
+
+/* Submit button in the main section */
+main button[type="submit"] {
+    background-color: #ffffff; /* Green background color */
+    color: #000000; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+main button[type="submit"]:hover {
+    background-color: #4d6e4b;
+}
+
+
+/* Style for the assessment title */
+.assessment-title {
+    margin-bottom: 30px; /* Add margin below the title */
+}
