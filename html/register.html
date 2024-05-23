@@ -28,14 +28,14 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">User Registration</h4>
-                <form class="form-sample" action="#" method="POST">
+                <form id = "user-form" action = "../healthy-habits-backend/register_process.php" method = "POST">
                     <p class="card-description">Personal info</p>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Full Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="full name"/>
+                                    <input type="text" class="form-control" placeholder="full name" name="Name"/>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="username" />
+                                    <input type="text" class="form-control" placeholder="username" name="Username"/>
                                 </div>
                             </div>
                         </div>
@@ -53,9 +53,9 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Gender</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control">
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                    <select class="form-control" name="Gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Date of Birth</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" placeholder="dd/mm/yyyy" />
+                                    <input class="form-control" placeholder="dd/mm/yyyy" name="Date_Of_Birth"/>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="email" />
+                                    <input type="text" class="form-control" placeholder="email" name="Email"/>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Password</label>
                                 <div class="col-sm-9">
-                                        <input type="password" class="form-control" id="passwordField" placeholder="Password" />
+                                        <input type="password" class="form-control" id="passwordField" placeholder="Password" name="Password"/>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,6 @@
         <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
   
 </body>
 

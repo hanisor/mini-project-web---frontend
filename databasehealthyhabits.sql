@@ -1,5 +1,5 @@
 CREATE TABLE User (
-    UserId INT PRIMARY KEY,
+    UserId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     Username VARCHAR(255),
     Date_Of_Birth VARCHAR(10),
@@ -14,7 +14,7 @@ CREATE TABLE User (
 
 
 CREATE TABLE Admin (
-    AdminId INT PRIMARY KEY,
+    AdminId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     Email VARCHAR(255),
     Password VARCHAR(255),
@@ -22,7 +22,7 @@ CREATE TABLE Admin (
 );
 
 CREATE TABLE Exercise (
-    ExerciseId INT PRIMARY KEY,
+    ExerciseId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     Category VARCHAR(255),
     Description TEXT,
@@ -33,7 +33,7 @@ CREATE TABLE Exercise (
 
 
 CREATE TABLE Goals (
-    GoalsId INT PRIMARY KEY,
+    GoalsId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255)
 );
 
@@ -47,7 +47,7 @@ CREATE TABLE Goal_Exercise (
 
 
 CREATE TABLE Recipe (
-    RecipeId INT PRIMARY KEY,
+    RecipeId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     Ingredient TEXT,
     Description TEXT,
