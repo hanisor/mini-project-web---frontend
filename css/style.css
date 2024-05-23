@@ -172,15 +172,26 @@ header {
 }
 
 .btn {
+    display: inline-block;
+    margin-top: 40px;
     width: 100%;
-    height: 45px;
     background: #558257;
     border: none;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
+    color: #fff;
     font-size: 1em;
     font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: #43633a;
+}
+
+/* Center button styles */
+.text-center {
+    text-align: center;
 }
 
 .login-register {
@@ -227,6 +238,7 @@ footer {
 .card-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: center; /* Center-align the title */
 }
 
 .form-sample .card-description {
@@ -263,7 +275,6 @@ footer {
 .form-check-label {
     margin-left: 0.5rem;
 }
-
 
 select.form-control {
     height: 2.5rem;
