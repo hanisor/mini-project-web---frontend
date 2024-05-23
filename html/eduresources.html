@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Resources</title>
+    <link rel="stylesheet" href="../css/style6.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Educational Resources</div>
+        <nav class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="PersonalizedHealthAssessment.html">Personal Health Assessment</a>
+            <a href="mealplanning.html">Meal Planning</a>
+            <a href="#">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="filter">
+            <h2>Filter by Category</h2>
+            <ul>
+                <li><button onclick="filterResources('articles')">Articles</button></li>
+                <li><button onclick="filterResources('videos')">Videos</button></li>
+                <!-- Add more categories as needed -->
+            </ul>
+        </div>
+
+        <div class="resources">
+            <!-- Resources will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Educational Resources. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/resources.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planning</title>
+    <link rel="stylesheet" href="../css/style6.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Healthy Habits</div>
+        <nav class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="PersonalizedHealthAssessment.html">Personal Health Assessment</a>
+            <a href="mealplanning.html">Meal Planning</a>
+            <a href="eduresources.html">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="form box">
+            <h2>Personalized Meal Planning</h2>
+            <div class="input-box">
+                <input type="number" id="weight" required>
+                <label for="weight">Weight (kg)</label>
+            </div>
+            <div class="input-box">
+                <input type="number" id="height" required>
+                <label for="height">Height (cm)</label>
+            </div>
+            <button class="btn" onclick="generateMealPlan()">Generate Meal Plan</button>
+        </div>
+    </div>
+
+    <div class="card" id="meal-plan" style="display: none;">
+        <div class="card-body">
+            <h2 class="card-title">Your Meal Plan</h2>
+            <div class="meal-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MealPlanner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateBMI(weight, height) {
+            return weight / ((height / 100) ** 2);
+        }
+
+        function generateMealPlan() {
+            const weight = document.getElementById('weight').value;
+            const height = document.getElementById('height').value;
+
+            if (weight && height) {
+                const bmi = calculateBMI(weight, height);
+                let mealPlan;
+
+                if (bmi < 18.5) {
+                    mealPlan = "High-calorie diet with balanced nutrients.";
+                } else if (bmi >= 18.5 && bmi < 24.9) {
+                    mealPlan = "Maintenance diet with balanced nutrients.";
+                } else {
+                    mealPlan = "Low-calorie diet with balanced nutrients.";
+                }
+
+                document.querySelector('.meal-content').innerHTML = `
+                    <p>BMI: ${bmi.toFixed(2)}</p>
+                    <p>Recommended Meal Plan: ${mealPlan}</p>
+                    <p>Portion Sizes: <br>Breakfast: 400 kcal<br>Lunch: 600 kcal<br>Dinner: 500 kcal</p>
+                    <p>Food Choices: Fruits, Vegetables, Whole Grains, Lean Proteins</p>
+                    <p>Nutrient Balance: Carbs 50%, Proteins 30%, Fats 20%</p>
+                `;
+                document.getElementById('meal-plan').style.display = 'block';
+            } else {
+                alert('Please enter your weight and height.');
+            }
+        }
+    </script>
+</body>
+</html>
