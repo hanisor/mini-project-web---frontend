@@ -2,7 +2,7 @@ CREATE TABLE User (
     UserId INT PRIMARY KEY,
     Name VARCHAR(255),
     Username VARCHAR(255),
-    Age INT,
+    Date_Of_Birth VARCHAR(10),
     Gender VARCHAR(10),
     Height FLOAT,
     Weight FLOAT,
