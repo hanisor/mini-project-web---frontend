@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #558257;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2em;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ddd;
+}
+
+.navigation .btnLogin-popup {
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background-color: #fff;
+    color: #558257;
+}
+
+main {
+    padding: 40px 20px;
+    color: #666; /* Change this to the desired text color */
+}
+
+.exercise-categories, .exercise-details {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6a994e, #a7c957);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.exercise-categories:hover, .exercise-details:hover {
+    transform: translateY(-10px);
+}
+
+.exercise-categories h2, .exercise-details h2 {
+    text-align: center; /* Center the h2 elements */
+    margin-bottom: 20px; /* Add space below h2 */
+}
+
+
+.exercise-categories span, .exercise-details span, .exercise-card span {
+    color: #6a994e; /* Green color */
+    pointer-events: none; /* Disables pointer events on the span */
+    text-decoration: none; /* Removes underline or any other decorations */
+    display: block; /* Ensures text is centered */
+    text-align: center; /* Centers the text */
+}
+
+
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-item {
+    background-color: #fff;
+    color: #558257;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row */
+}
+
+.category-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.category-item span {
+    display: block;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.category-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-category-container {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.exercise-category-container:hover {
+    transform: translateY(-10px);
+}
+
+.exercise-category {
+    margin-bottom: 20px;
+    text-align: center; /* Center the text */
+    color: #384b2c; /* Green color */
+}
+
+.exercise-category h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Increase font size */
+    font-weight: bold; /* Make font bold */
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+
+.exercise-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.exercise-card {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row */
+    text-decoration: none;
+    color: #333;
+}
+
+
+.exercise-card img {
+    width: 100%;
+    height: auto; /* Let the height adjust according to the image's aspect ratio */
+    object-fit: cover;
+}
+
+
+.exercise-info {
+    padding: 15px;
+    text-align: center; /* Center the text */
+    color: #6a994e; /* Green color */
+}
+
+
+.exercise-info h4 {
+    margin-bottom: 5px;
+}
+
+.exercise-info p {
+    font-size: 0.9em;
+}
+
+.exercise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #558257;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #558257;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+.category-item a {
+    text-decoration: none; /* Removes underline from anchor elements */
+}
+
+.exercise-card a {
+    text-decoration: none; /* Removes underline from anchor elements within exercise cards */
+}

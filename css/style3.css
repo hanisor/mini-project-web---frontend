@@ -83,18 +83,21 @@ main {
     justify-content: center;
     align-items: center;
     color: #fff; /* Text color */
+    padding-bottom: 70px; /* Adjust main's padding bottom to accommodate footer */
+
 }
 
-/* Footer Styles */
 footer {
-    background-color: #558257; /* Background color */
-    color: #fff; /* Text color */
-    padding: 20px 0; /* Adjust padding */
-    position: fixed; /* Fixed position */
-    bottom: 0; /* Align to bottom */
-    width: 100%; /* Full width */
+    background-color: #558257;
+    color: #ffffff; /* Change text color to white */
     text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: absolute; /* Change position to absolute */
+    bottom: 0;
 }
+
+
 
 .container {
     width: 90%; /* Set width to 90% of the viewport width */

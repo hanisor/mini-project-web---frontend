@@ -181,15 +181,15 @@ main {
 
 
 
-/* Footer Styles */
 footer {
-    background-color: #558257; /* Background color */
-    color: #fff; /* Text color */
-    padding: 20px 0; /* Adjust padding */
-    position: fixed; /* Fixed position */
-    bottom: 0; /* Align to bottom */
-    width: 100%; /* Full width */
+    background-color: #558257;
+    color: #000000;
     text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    clear: both; /* Clear the float */
 }
 
 
@@ -198,6 +198,11 @@ footer {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px; /* Add some margin at the bottom */
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 
