@@ -62,3 +62,21 @@ CREATE TABLE User_Recipe (
     FOREIGN KEY (UserId) REFERENCES User(UserId),
     FOREIGN KEY (RecipeId) REFERENCES Recipe(RecipeId)
 );
+
+CREATE TABLE Contact_Us (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL
+);
+
+CREATE TABLE Health_Data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    height DECIMAL(5,2) NOT NULL,
+    weight DECIMAL(5,2) NOT NULL,
+    bmi DECIMAL(5,2) NOT NULL,
+    bmi_status VARCHAR(20) NOT NULL,
+);
+
+

@@ -82,7 +82,7 @@ p {
 
 
 main {
-    padding-top: 80px; /* Adjust padding top */
+    padding-top: 200px; /* Adjust padding top */
     padding-bottom: 50px; /* Adjust padding bottom */
     display: flex;
     flex-direction: column;

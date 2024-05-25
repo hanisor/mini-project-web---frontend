@@ -24,11 +24,11 @@
 
     // type of connection : mysql object oriented
     $con = new mysqli($host, $user, $password, $dbname, $port, $socket);
-    if ($con->connect_error) {
+    /* if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     } else {
         echo "Connected successfully";
-    }
+    } */
 
 
 ?>

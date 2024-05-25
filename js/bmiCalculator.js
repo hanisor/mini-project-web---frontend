@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var bmiInput = document.getElementById('bmi');
     var bmiStatusInput = document.getElementById('bmiStatus');
 
-    // Add submit event listener to the form
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
+    // Add event listeners to height and weight input fields
+    heightInput.addEventListener('input', updateBMI);
+    weightInput.addEventListener('input', updateBMI);
 
+    // Function to calculate and update BMI
+    function updateBMI() {
         // Get height and weight values
         var height = parseFloat(heightInput.value);
         var weight = parseFloat(weightInput.value);
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Determine BMI status
         var bmiStatus = getBMIStatus(bmi);
         bmiStatusInput.value = bmiStatus;
-    });
+    }
 
     // Function to determine BMI status based on standard BMI categories
     function getBMIStatus(bmi) {

@@ -227,3 +227,7 @@ footer {
 .exercise-card a {
     text-decoration: none; /* Removes underline from anchor elements within exercise cards */
 }
+
+.exercise-card .exercise-info h4 {
+    text-decoration: underline;
+}
