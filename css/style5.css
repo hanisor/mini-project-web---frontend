@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* Reset CSS 5*/
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +11,15 @@ body {
     color: #333;
 }
 
+/* Shared styles for headers */
 header {
     background-color: #558257;
     color: #fff;
-    padding: 20px;
+    padding: 1em; /* Ensure consistent padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1em;
 }
 
 .logo {
@@ -115,4 +117,3 @@ footer {
     width: 100%;
     clear: both; /* Clear the float */
 }
-
