@@ -1,12 +1,8 @@
-/* Reset CSS 7 */
+/* Reset CSS 1 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
 }
 
 body {
@@ -14,7 +10,8 @@ body {
     background-color: #f0f0f0;
     color: #333;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Ensure elements are in a column layout */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 header {
@@ -25,6 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
+    
 }
 
 .logo {
@@ -35,6 +33,8 @@ header {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+
 }
 
 .navigation .btnLogin-popup {
@@ -50,6 +50,23 @@ header {
 .navigation .btnLogin-popup:hover {
     background-color: #fff;
     color: #558257;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
 }
 
 p {
@@ -164,11 +181,18 @@ main {
 
 footer {
     background-color: #558257;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
     position: relative;
     bottom: 0;
     width: 100%;
     clear: both; /* Clear the float */
+    font-size: 0.8em; /* Set font size to 1em */
+}
+
+
+
+footer p {
+    text-align: center; /* Ensure paragraph text is centered */
 }

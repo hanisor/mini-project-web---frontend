@@ -1,5 +1,4 @@
-
-/* Reset CSS 1*/
+/* Reset CSS 1 */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +9,9 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
     color: #333;
+    display: flex;
+    flex-direction: column; /* Ensure elements are in a column layout */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 header {
@@ -20,6 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
+    
 }
 
 .logo {
@@ -30,6 +33,8 @@ header {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+
 }
 
 .navigation .btnLogin-popup {
@@ -64,28 +69,43 @@ header {
     transform: scaleX(1);
 }
 
-/* Contact Form Styles */
-.contact-form {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    overflow: hidden; /* Clear the float */
-    margin-bottom: 100px; /* Add space at the bottom to prevent overlap with footer */
+/* Main container styles */
+main {
+    flex: 1; /* Take up the remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* Add padding for space between header and footer */
 }
 
+/* Contact Form Styles */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-form {
+    background-color: #d2d2d2;
+
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 80%;
+    max-width: 40%;
+    margin: 0 auto;
+}
 .contact-form h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .contact-form label {
     display: block;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -95,7 +115,7 @@ header {
 .contact-form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     border-radius: 3px;
     margin-bottom: 20px;
     font-size: 16px;
@@ -115,44 +135,29 @@ header {
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin: 0 auto; /* Center the submit button */
+    margin: 0 auto;
 }
 
 .contact-form button[type="submit"]:hover {
     background-color: #4d6e4b;
 }
 
-/* Additional Styles */
-.left-image {
-    width: 200px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px;
-}
-
+/* Footer styles */
 footer {
     background-color: #558257;
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 20px 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
-    clear: both; /* Clear the float */
+    font-size: 0.8em;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
-/* Add styles for contact container */
-.contact-container {
-    display: flex;
-    align-items: center;
-}
-
-
-.contact-form {
-    flex: 1; /* Fill remaining space */
-    padding: 20px;
-    align-items: center;
-    background-color: #4c7749; /* Set the background color for the contact container */
-    padding: 20px; /* Adjust padding as needed */
+/* Additional Styles */
+.left-image {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
 }
 
 .image-gallery {
@@ -163,13 +168,13 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 10px; /* Adjust as needed */
-    max-width: 100%; /* Ensure the gallery stretches to the full width */
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    margin-bottom: 20px; /* Add space at the bottom */
+    gap: 10px;
+    max-width: 100%;
+    overflow-y: hidden;
+    margin-bottom: 20px;
 }
 
 .gallery-container img {
-    max-width: 200px; /* Adjust the max-width of images */
-    max-height: 200px; /* Adjust the max-height of images */
+    max-width: 200px;
+    max-height: 200px;
 }

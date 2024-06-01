@@ -9,6 +9,71 @@
     <style>
         .container {
             text-align: justify;
+            padding: 20px;
+        }
+
+        .about-section {
+            background: url('../images/about-bg.jpg') no-repeat center center/cover;
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .about-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .team-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.5em;
+            color: #558257;
+            margin-bottom: 20px;
+        }
+
+        .team-section .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-section .team-member {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .team-section .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-section .team-member h3 {
+            font-size: 1.5em;
+            color: #558257;
+            margin-bottom: 5px;
+        }
+
+        .team-section .team-member p {
+            font-size: 1em;
+            color: #333;
         }
     </style>
 </head>
@@ -19,22 +84,46 @@
             <span class="habits">Habits</span>
         </h2>
         <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#">Personal Health Assessment</a>
-            <a href="#">Meal Planning</a>
-            <a href="#">Educational Resources</a>
-            <a href="#">Contact Us</a>
-            <a href="#">About Us</a>
+            <a href="homepage.html">Home</a>
+            <a href="homepage2.html">Personal Health Assessment</a>
+            <a href="mealplanning.html">Meal Planning</a>
+            <a href="eduresources.html">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
             <button class="btnLogin-popup">Login</button>
         </nav>
     </header>
 
-    <div class="container">
-        <section>
-            <h1>About Us</h1>
-            <p>The Healthy Habits web application simplifies adopting and maintaining healthier lifestyles for users of all ages. It offers personalized recommendations for physical activity, nutrition, and mental well-being, tailored to individual goals and preferences. Users can address specific objectives like weight management and stress reduction through customized exercise routines, meal plans, and mental health resources. The intuitive interface accommodates dietary restrictions and fosters community engagement for mutual support. Ultimately, Healthy Habits empowers users to seamlessly integrate healthy habits into their daily lives, promoting long-term well-being and vitality.</p>
+    <main>
+        <div class="container">
+            <div class="about-section">
+                <h1>About Us</h1>
+                <p>The Healthy Habits web application simplifies adopting and maintaining healthier lifestyles for users of all ages. It offers personalized recommendations for physical activity, nutrition, and mental well-being, tailored to individual goals and preferences. Users can address specific objectives like weight management and stress reduction through customized exercise routines, meal plans, and mental health resources. The intuitive interface accommodates dietary restrictions and fosters community engagement for mutual support. Ultimately, Healthy Habits empowers users to seamlessly integrate healthy habits into their daily lives, promoting long-term well-being and vitality.</p>
+            </div>
+        </div>
+        
+        <section class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="../images/cardio.png" alt="Team Member">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="../images/cycling.png" alt="Team Member">
+                    <h3>Jane Smith</h3>
+                    <p>Chief Nutritionist</p>
+                </div>
+                <div class="team-member">
+                    <img src="../images/jump.png" alt="Team Member">
+                    <h3>Emily Johnson</h3>
+                    <p>Head of Fitness</p>
+                </div>
+            </div>
         </section>
-    </div>
+    </main>
+    
 
     <footer>
         <p>&copy; 2024 Healthy Habits. All rights reserved.</p>

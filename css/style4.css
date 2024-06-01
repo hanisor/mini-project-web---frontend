@@ -197,13 +197,14 @@ main {
 
 footer {
     background-color: #558257;
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 20px 0;
     position: relative;
     bottom: 0;
     width: 100%;
     clear: both; /* Clear the float */
+    font-size: 0.8em; /* Set font size to 1em */
 }
 
 .intro {

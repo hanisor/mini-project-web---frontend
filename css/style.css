@@ -1,5 +1,4 @@
-
-/* Reset CSS */
+/* Reset CSS 6 */
 * {
     margin: 0;
     padding: 0;
@@ -10,16 +9,9 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('') no-repeat;
-    background-size: cover;
-    background-position: center;
-    
 }
 
-
+/* Shared styles for headers */
 header {
     background-color: #558257;
     color: #fff;
@@ -28,9 +20,14 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-    
-}.logo {
+.logo {
     font-size: 2em;
 }
 
@@ -38,6 +35,8 @@ header {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;
+    font-weight: 500;
+    position: relative;
 }
 
 .navigation .btnLogin-popup {
@@ -70,6 +69,108 @@ header {
 
 .navigation a:hover::after {
     transform: scaleX(1);
+}
+
+
+main {
+    padding: 20px;
+    margin-top: 70px; /* Add top margin to prevent overlap with fixed header */
+    flex: 1;
+    width: 100%; /* Ensure main content takes full width */
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #558257;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+.about-section {
+    background-color: #fff !important;
+    color: #070404 !important;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 93%; /* Set the desired width, for example, 80% */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6% 2%; /* Adjust padding as needed */
+}
+
+.about-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1em;
+    width: 90%; /* Set width to 90% */
+    margin-left: auto; /* Center the sections horizontally */
+    margin-right: auto;
+}
+
+section {
+    margin-bottom: 4%;
+    padding: 4% 2%; /* Adjust padding as needed */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Set width to 90% */
+    margin-left: auto; /* Center the sections horizontally */
+    margin-right: auto;
+}
+
+section h2 {
+    margin-bottom: 4%;
+}
+
+section p {
+    margin-bottom: 10px;
+}
+
+section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 5px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #558257;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #6d8b6a;
+}
+
+footer {
+    background-color: #558257;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    clear: both; /* Clear the float */
+    font-size: 1em; /* Set font size to 1em */
 }
 
 .wrapper {
@@ -199,16 +300,6 @@ header {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #558257;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
 .card {
     background-color: white;
     border-radius: 0.5rem;
@@ -280,7 +371,6 @@ select.form-control {
     margin-right: -0.75rem;
     margin-left: -0.75rem;
 }
-
 .grid-margin {
     margin-bottom: 2rem;
 }
@@ -302,7 +392,6 @@ select.form-control {
     border-radius: 0.25rem;
     padding: 0.5rem;
 }
-
 
 /*  register button */
 .button-container {

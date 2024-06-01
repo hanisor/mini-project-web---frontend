@@ -1,4 +1,4 @@
-/* Reset CSS 5*/
+/* Reset CSS 1 */
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +9,20 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
     color: #333;
+    display: flex;
+    flex-direction: column; /* Ensure elements are in a column layout */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
-/* Shared styles for headers */
 header {
     background-color: #558257;
     color: #fff;
-    padding: 1em; /* Ensure consistent padding */
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
+    
 }
 
 .logo {
@@ -30,7 +33,8 @@ header {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;
-    font-weight: 500;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+
 }
 
 .navigation .btnLogin-popup {
@@ -48,8 +52,26 @@ header {
     color: #558257;
 }
 
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
 main {
     padding: 20px;
+    margin-top: 80px; /* Ensure content is not hidden under fixed header */
 }
 
 .intro {
@@ -109,11 +131,12 @@ section ul li {
 
 footer {
     background-color: #558257;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
     position: relative;
     bottom: 0;
     width: 100%;
     clear: both; /* Clear the float */
+    font-size: 1em; /* Set font size to 1em */
 }
