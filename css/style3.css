@@ -71,7 +71,7 @@ header {
 
 
 main {
-    padding-top: 50px; /* Adjust as needed to create space for the header */
+    padding-top: 80px; /* Adjust as needed to create space for the header */
     display: flex;
     justify-content: center;
     align-items: center;
