@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Health Assessment</title>
+    <link rel="stylesheet" href="../css/style8.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">
+            <span class="healthy">Healthy</span>
+            <span class="habits">Habits</span>
+        </h2>
+        <nav class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="homepage2.html">Personal Health Assessment</a>
+            <a href="mealplanning.html">Meal Planning</a>
+            <a href="eduresources.html">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Fitness Goal</h1>
+            <p>Choose your desired fitness goal to receive personalized exercise recommendations</p>
+        </section>
+        
+        <div class="container">
+            <h2>Select Your Fitness Goal</h2>
+
+            <form id="goalForm" method="post" action="../healthy-habits-backend/select_goal.php" class="goal-form">
+                <input type="hidden" name="userId" value="<?php echo $_SESSION['userId']; ?>"> <!-- Assuming userId is stored in session -->
+                <label for="goalId">Select Goal:</label>
+                <select name="goalId" id="goalId" onchange="fetchExercises()">
+                    <option value="-">-</option>
+                    <option value="Strength Training">Strength Training</option>
+                    <option value="Cardio Workouts">Cardio Workouts</option>
+                    <option value="Flexibility Exercises">Flexibility Exercises</option>
+                </select>
+                <br><br>
+            </form>
+
+            <div id="exerciseList"></div> <!-- Container to display exercises -->
+        </div>  
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/goal.js" defer></script>
+</body>
+</html>
