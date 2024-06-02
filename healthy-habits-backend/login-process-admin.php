@@ -29,7 +29,7 @@
             // pop-up message for showing login successful
             echo "<script>
                         window.alert('Login successful! Welcome');
-                        window.location.href = '../html/homepage.html';
+                        window.location.href = '../html/exercise-admin.html';
                     </script>";
         }
         else {
