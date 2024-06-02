@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan Result</title>
+    <link rel="stylesheet" href="../css/style6.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">
+            <span class="healthy">Healthy</span>
+            <span class="habits">Habits</span>
+        </h2>
+        <nav class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="homepage2.html">Personal Health Assessment</a>
+            <a href="mealplanning.html">Meal Planning</a>
+            <a href="eduresources.html">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="form-box">
+            <h2>Your Meal Plan</h2>
+            <div class="meal-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MealPlanner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchMealPlan() {
+            try {
+                const response = await fetch('../healthy-habits-backend/meal_plan_result.php');
+                const result = await response.json();
+
+                if (result.success) {
+                    document.querySelector('.meal-content').innerHTML = `
+                        <p>BMI: ${result.bmi}</p>
+                        <p>Status: ${result.status}</p>
+                        <p>Meal Plan: ${result.mealPlan}</p>
+                        <div class="recipe-list">
+                        <br>
+                            <h3>Recommended Recipes:</h3>
+                            ${result.recipes.map(recipe => `
+                                <div class="recipe-box">
+                                    <h3>${recipe.Name}</h3>
+                                    <p>${recipe.Ingredient}</p>
+                                    <p>${recipe.Description}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    alert('Failed to fetch meal plan: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error fetching meal plan:', error);
+                alert('An error occurred while fetching the meal plan.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchMealPlan);
+    </script>
+</body>
+</html>

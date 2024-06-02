@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educational Resources</title>
-    <link rel="stylesheet" href="../css/style6.css">
+    <link rel="stylesheet" href="../css/style10.css">
 </head>
 <body>
     <header>
-        <h2 class="logo">
-            <span class="healthy">Healthy</span>
-            <span class="habits">Habits</span>
-        </h2>
+        <h1 class="logo">Healthy Habits</h1>
         <nav class="navigation">
             <a href="homepage.html">Home</a>
             <a href="homepage2.html">Personal Health Assessment</a>
@@ -24,13 +21,12 @@
     </header>
 
     <main>
-        <div class="filter">
-            <h2>Filter by Category</h2>
-            <ul>
-                <li><button onclick="filterResources('articles')">Articles</button></li>
-                <li><button onclick="filterResources('videos')">Videos</button></li>
-                <!-- Add more categories as needed -->
-            </ul>
+        <div class="categories">
+            <h2>Select a Category</h2>
+            <div class="category-buttons">
+                <button onclick="filterResources('healthyLifestyle')">Healthy Lifestyle</button>
+                <button onclick="filterResources('healthyFood')">Healthy Food</button>
+            </div>
         </div>
 
         <div class="resources">

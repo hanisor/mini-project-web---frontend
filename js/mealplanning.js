@@ -1,3 +1,4 @@
+
 async function fetchUserDetails() {
     try {
         const response = await fetch('../healthy-habits-backend/meal_plan.php');
@@ -7,22 +8,7 @@ async function fetchUserDetails() {
         const result = await response.json();
 
         if (result.success) {
-            document.getElementById('meal-plan').style.display = 'block';
-            document.querySelector('.meal-content').innerHTML = `
-                <p>BMI: ${result.bmi}</p>
-                <p>Meal Plan: ${result.mealPlan}</p>
-                <div class="recipe-list">
-                <br>
-                    <h3>Recommended Recipes:</h3>
-                    ${result.recipes.map(recipe => `
-                        <div class="recipe-box">
-                            <h3>${recipe.Name}</h3>
-                            <p>${recipe.Ingredient}</p>
-                            <p>${recipe.Description}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            window.location.href = 'MealPlanningResult.html';
         } else {
             alert('Failed to fetch user details: ' + result.message);
         }
@@ -31,3 +17,4 @@ async function fetchUserDetails() {
         alert('An error occurred while fetching user details.');
     }
 }
+

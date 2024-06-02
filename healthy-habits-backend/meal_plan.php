@@ -30,11 +30,16 @@ try {
         $bmi = calculateBMI($weight, $height);
 
         $mealPlan = '';
+        $status = '';
+
         if ($bmi < 18.5) {
+            $status = "Underweight";
             $mealPlan = "High-calorie diet with balanced nutrients.";
         } else if ($bmi >= 18.5 && $bmi < 24.9) {
+            $status = "Normal weight";
             $mealPlan = "Maintenance diet with balanced nutrients.";
         } else {
+            $status = $bmi >= 30 ? "Obese" : "Overweight";
             $mealPlan = "Low-calorie diet with balanced nutrients.";
         }
 
@@ -52,12 +57,15 @@ try {
             $recipes[] = $row;
         }
 
-        $response = [
-            "success" => true,
+        // Store results in session
+        $_SESSION['mealPlanData'] = [
             "bmi" => $bmi,
             "mealPlan" => $mealPlan,
+            "status" => $status,
             "recipes" => $recipes
         ];
+
+        $response = ["success" => true];
     } else {
         throw new Exception("User details not found.");
     }
@@ -73,12 +81,7 @@ echo json_encode($response);
 
 function calculateBMI($weight, $height)
 {
-    // Calculate BMI
     $bmi = $weight / (($height / 100) ** 2);
-
-    // Round BMI to two decimal places
-    $bmi = number_format((float)$bmi, 2, '.', '');
-
-    return $bmi;
+    return number_format((float)$bmi, 2, '.', '');
 }
 ?>

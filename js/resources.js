@@ -1,14 +1,18 @@
 // Sample data - Replace with actual resources data
-const resources = [
-    { title: 'Article 1', type: 'articles', link: 'https://example.com/article1' },
-    { title: 'Article 2', type: 'articles', link: 'https://example.com/article2' },
-    { title: 'Video 1', type: 'videos', link: 'https://www.youtube.com/watch?v=xyQY8a-ng6g&list=PLq_kAHHySqw5p716lV_JvLmydZkbO3RJe&pp=gAQBiAQB' },
-    { title: 'Video 2', type: 'videos', link: 'https://www.youtube.com/watch?v=c06dTj0v0sM&list=PLq_kAHHySqw7z2LoED6WfVFda5TmfePzg&pp=gAQBiAQB' }
-];
+const resources = {
+    healthyLifestyle: [
+        { title: 'Article 1', type: 'articles', link: 'https://example.com/article1' },
+        { title: 'Video 1', type: 'videos', link: 'https://www.youtube.com/watch?v=xyQY8a-ng6g&list=PLq_kAHHySqw5p716lV_JvLmydZkbO3RJe&pp=gAQBiAQB' }
+    ],
+    healthyFood: [
+        { title: 'Article 2', type: 'articles', link: 'https://example.com/article2' },
+        { title: 'Video 2', type: 'videos', link: 'https://www.youtube.com/watch?v=c06dTj0v0sM&list=PLq_kAHHySqw7z2LoED6WfVFda5TmfePzg&pp=gAQBiAQB' }
+    ]
+};
 
 // Function to filter and display resources based on category
 function filterResources(category) {
-    const filteredResources = resources.filter(resource => resource.type === category);
+    const filteredResources = resources[category];
     displayResources(filteredResources);
 }
 
@@ -28,13 +32,24 @@ function displayResources(resources) {
         linkElement.textContent = 'View';
         linkElement.href = resource.link;
         linkElement.target = '_blank';
+        linkElement.style.display = 'none'; // Initially hide the link
 
         resourceElement.appendChild(titleElement);
         resourceElement.appendChild(linkElement);
 
         resourcesContainer.appendChild(resourceElement);
     });
+
+    // Show links when a category button is clicked
+    const links = resourcesContainer.querySelectorAll('.resource a');
+    links.forEach(link => {
+        link.style.display = 'inline'; // Show the link
+    });
+
+    // Show the resources container after adding content
+    resourcesContainer.style.display = 'block';
 }
 
-// Display all resources by default
-displayResources(resources);
+// Display default message
+const resourcesContainer = document.querySelector('.resources');
+resourcesContainer.innerHTML = '<p>Please select a category to view resources.</p>';
