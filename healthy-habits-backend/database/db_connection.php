@@ -14,7 +14,7 @@
     $user = "root";
 
     // Most of the time the password is empty 
-    $password = "";
+    $password = "root";
 
     // database name 
     $dbname = "healthy_habits";
@@ -24,11 +24,9 @@
 
     // type of connection : mysql object oriented
     $con = new mysqli($host, $user, $password, $dbname, $port, $socket);
-    /* if ($con->connect_error) {
+    if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
-    } else {
+    } /* else {
         echo "Connected successfully";
-    } */
-
-
+    }   */
 ?>
