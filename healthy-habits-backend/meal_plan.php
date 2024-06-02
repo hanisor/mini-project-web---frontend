@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-include('../database/db_connection.php');
+include('../healthy-habits-backend/database/db_connection.php');
 
 $response = ["success" => false, "message" => "An error occurred."];
 
