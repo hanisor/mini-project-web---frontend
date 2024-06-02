@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalized Health Assessment</title>
+    <title>Healthy Habits - Personalized Health Assessment</title>
     <link rel="stylesheet" href="../css/style8.css">
 </head>
+
 <body>
     <header>
-        <h2 class="logo">
-            <span class="healthy">Healthy</span>
-            <span class="habits">Habits</span>
-        </h2>
+        <h2 class="logo">Healthy Habits</h2>
         <nav class="navigation">
             <a href="homepage.html">Home</a>
             <a href="homepage2.html">Personal Health Assessment</a>
@@ -25,13 +24,28 @@
 
     <main>
         <section class="intro">
-            <h1>Fitness Goal</h1>
+            <h1>Discover Your Healthy Habits</h1>
             <p>Choose your desired fitness goal to receive personalized exercise recommendations</p>
         </section>
-        
-        <div class="container">
-            <h2>Select Your Fitness Goal</h2>
 
+        <div class="container">
+                <div class="categories-grid">
+                    <div class="category-item">
+                        <img src="../images/strength.png" alt="Strength Training">
+                        <h3>Strength Training</h3>
+                    </div>
+                    <div class="category-item">
+                        <img src="../images/cardio.png" alt="Cardio Workouts">
+                        <h3>Cardio Workouts</h3>
+                    </div>
+                    <div class="category-item">
+                        <img src="../images/flexibility.png" alt="Flexibility Exercises">
+                        <h3>Flexibility Exercises</h3>
+                    </div>
+                </div>
+            </section>
+        
+            <h2>Select Your Fitness Goal</h2>
             <form id="goalForm" class="goal-form">
                 <label for="GoalId">Select Goal:</label>
                 <select name="GoalId" id="GoalId">
@@ -39,9 +53,17 @@
                 </select>
                 <br><br>
             </form>
+        </div>
+        
 
-            <div id="exerciseList"></div> <!-- Container to display exercises -->
-        </div>  
+        <section class="intro">
+            <h1>Types of Exercises</h1>
+            <p>Embark on your personalized journey to a healthier lifestyle with our tailored exercise recommendations.</p>
+        </section>
+
+        <div class="exercise-container">
+            <div id="exerciseList"></div>
+        </div>
     </main>
 
     <footer>
@@ -51,4 +73,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/goal.js" defer></script>
 </body>
+
 </html>
