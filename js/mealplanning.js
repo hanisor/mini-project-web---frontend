@@ -11,6 +11,17 @@ async function fetchUserDetails() {
             document.querySelector('.meal-content').innerHTML = `
                 <p>BMI: ${result.bmi}</p>
                 <p>Meal Plan: ${result.mealPlan}</p>
+                <div class="recipe-list">
+                <br>
+                    <h3>Recommended Recipes:</h3>
+                    ${result.recipes.map(recipe => `
+                        <div class="recipe-box">
+                            <h3>${recipe.Name}</h3>
+                            <p>${recipe.Ingredient}</p>
+                            <p>${recipe.Description}</p>
+                        </div>
+                    `).join('')}
+                </div>
             `;
         } else {
             alert('Failed to fetch user details: ' + result.message);

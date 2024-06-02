@@ -38,16 +38,32 @@ try {
             $mealPlan = "Low-calorie diet with balanced nutrients.";
         }
 
+        // Fetch recipes based on the meal plan description
+        $sqlFetchRecipes = "SELECT * FROM recipe WHERE Description = ?";
+        $stmtRecipes = $con->prepare($sqlFetchRecipes);
+        if (!$stmtRecipes) {
+            throw new Exception("Prepare statement failed: " . $con->error);
+        }
+        $stmtRecipes->bind_param("s", $mealPlan);
+        $stmtRecipes->execute();
+        $resultRecipes = $stmtRecipes->get_result();
+        $recipes = [];
+        while ($row = $resultRecipes->fetch_assoc()) {
+            $recipes[] = $row;
+        }
+
         $response = [
             "success" => true,
             "bmi" => $bmi,
-            "mealPlan" => $mealPlan
+            "mealPlan" => $mealPlan,
+            "recipes" => $recipes
         ];
     } else {
         throw new Exception("User details not found.");
     }
 
     $stmt->close();
+    $stmtRecipes->close();
 } catch (Exception $e) {
     $response["message"] = $e->getMessage();
 }
@@ -57,6 +73,12 @@ echo json_encode($response);
 
 function calculateBMI($weight, $height)
 {
-    return $weight / (($height / 100) ** 2);
+    // Calculate BMI
+    $bmi = $weight / (($height / 100) ** 2);
+
+    // Round BMI to two decimal places
+    $bmi = number_format((float)$bmi, 2, '.', '');
+
+    return $bmi;
 }
 ?>
