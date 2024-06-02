@@ -143,6 +143,38 @@ else if ($_SERVER["REQUEST_METHOD"] == "PUT") {
     }
 }
 
+else if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Check if parentId parameter is provided
+    if(isset($_GET['GoalId'])) {
+        // Sanitize and store the parentId parameter
+        $GoalId = mysqli_real_escape_string($con, $_GET['GoalId']);
+
+        // Query to fetch caregiver details based on parentId
+        $query = $con->query("SELECT * FROM exercise WHERE GoalId = '$GoalId'");
+
+        // Check if any row is returned
+        if ($query->num_rows > 0) {
+            // Array to store all children data
+            $exerciseData = array();
+
+            // Loop through the result set and fetch all rows
+            while ($row = $query->fetch_assoc()) {
+                // Append each row to the children data array
+                $exerciseData[] = $row;
+            }
+
+            // Return the children data as JSON response
+            echo json_encode($exerciseData);
+        } else {
+            // No children found for the provided parentId
+            echo json_encode(array('error' => 'No exercise found for the provided exerciseId'));
+        }
+    } else {
+        // No parentId parameter provided
+        echo json_encode(array('error' => 'goalid parameter is missing'));
+    }
+}
+
 // Handle other request methods
 else {
     // Return an error response if the request method is not allowed

@@ -32,14 +32,10 @@
         <div class="container">
             <h2>Select Your Fitness Goal</h2>
 
-            <form id="goalForm" method="post" action="../healthy-habits-backend/select_goal.php" class="goal-form">
-                <input type="hidden" name="userId" value="<?php echo $_SESSION['userId']; ?>"> <!-- Assuming userId is stored in session -->
-                <label for="goalId">Select Goal:</label>
-                <select name="goalId" id="goalId" onchange="fetchExercises()">
-                    <option value="-">-</option>
-                    <option value="Strength Training">Strength Training</option>
-                    <option value="Cardio Workouts">Cardio Workouts</option>
-                    <option value="Flexibility Exercises">Flexibility Exercises</option>
+            <form id="goalForm" class="goal-form">
+                <label for="GoalId">Select Goal:</label>
+                <select name="GoalId" id="GoalId">
+                    <option value="-">Loading...</option>
                 </select>
                 <br><br>
             </form>
@@ -52,6 +48,7 @@
         <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/goal.js" defer></script>
 </body>
 </html>

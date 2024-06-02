@@ -38,7 +38,9 @@ try {
         http_response_code(200);
         $response = array('success' => true, 'message' => 'Goal successfully added');
         echo json_encode($response);
-    } else if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    } 
+    
+    else if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $sql = "SELECT GoalId, Name FROM goal";
         $result = $con->query($sql);
 

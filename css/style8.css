@@ -68,16 +68,20 @@ header {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 50%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #558257; /* Green background color */
+    background-color: #96a896; /* Green background color */
     border-radius: 10px; /* Rounded corners */
-    margin-top: 10%;
+    margin-top: 1%;
+    margin-bottom: 10%;
+
 }
 
 .goal-form {
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
 
 main {
@@ -87,7 +91,7 @@ main {
 
 .intro {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 3%;
 }
 
 .intro h1 {
