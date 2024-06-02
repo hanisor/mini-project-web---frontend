@@ -24,25 +24,18 @@ CREATE TABLE Admin (
 CREATE TABLE Exercise (
     ExerciseId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
-    Category VARCHAR(255),
     Description TEXT,
     Link VARCHAR(255),
     AdminId INT,
+    GoalId INT,
+    FOREIGN KEY (GoalId) REFERENCES Goal(GoalId)
     FOREIGN KEY (AdminId) REFERENCES Admin(AdminId)
 );
 
 
-CREATE TABLE Goals (
-    GoalsId INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Goal (
+    GoalId INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255)
-);
-
-CREATE TABLE Goal_Exercise (
-    GoalsId INT,
-    ExerciseId INT,
-    PRIMARY KEY (GoalsId, ExerciseId),
-    FOREIGN KEY (GoalsId) REFERENCES Goals(GoalsId),
-    FOREIGN KEY (ExerciseId) REFERENCES Exercise(ExerciseId)
 );
 
 
@@ -71,12 +64,5 @@ CREATE TABLE Contact_Us (
     message TEXT NOT NULL
 );
 
-CREATE TABLE Health_Data (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    height DECIMAL(5,2) NOT NULL,
-    weight DECIMAL(5,2) NOT NULL,
-    bmi DECIMAL(5,2) NOT NULL,
-    bmi_status VARCHAR(20) NOT NULL,
-);
 
 
