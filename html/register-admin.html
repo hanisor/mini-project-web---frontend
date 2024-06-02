@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Habits</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Healthy Habits</h2>
+        <nav class="navigation">
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Register Account</h2>
+            <form id="user-form" action="../healthy-habits-backend/register-process-admin.php" method="POST" onsubmit="return validateForm()">
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="text" required name="Name">
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="email" required name="Email">
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="password" required name="Password" id="Password">
+                    <label>Password</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="password" required name="ConfirmPassword" id="ConfirmPassword">
+                    <label>Confirm Password</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="../html/login-admin.html">Login</a></p>
+                </div>
+                <p id="error-message" style="color: red;"></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("Password").value;
+            var confirmPassword = document.getElementById("ConfirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
