@@ -5,6 +5,21 @@
     box-sizing: border-box;
 }
 
+/* CSS Variables */
+:root {
+    --primary-bg-color: #558257;
+    --primary-color: #fff;
+    --secondary-color: #4CAF50;
+    --hover-color: #45a049;
+    --text-color: #333;
+    --subtext-color: #666;
+    --background-color: #f0f0f0;
+    --container-bg-color: #fff;
+    --container-shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
@@ -28,31 +43,38 @@ header {
     font-size: 2em;
 }
 
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
 .navigation a {
-    color: #fff;
+    color: var(--primary-color);
     font-weight: 500;
     margin-left: 20px;
     position: relative;
     text-decoration: none;
+    padding: 10px 0;
 }
 
 .navigation .btnLogin-popup {
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid var(--primary-color);
     border-radius: 5px;
-    color: #fff;
+    color: var(--primary-color);
     cursor: pointer;
     margin-left: 20px;
     padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navigation .btnLogin-popup:hover {
-    background-color: #fff;
-    color: #558257;
+    background-color: var(--primary-color);
+    color: var(--primary-bg-color);
 }
 
 .navigation a::after {
-    background: #fff;
+    background: var(--primary-color);
     border-radius: 5px;
     bottom: -6px;
     content: '';
@@ -60,7 +82,7 @@ header {
     left: 0;
     position: absolute;
     transform: scaleX(0);
-    transition: transform .5s;
+    transition: transform 0.5s;
     width: 100%;
 }
 
@@ -77,75 +99,87 @@ header {
     margin: 1em auto 2em;
     width: 100%;
     max-width: 80%;
-
-
 }
 
 .intro h1 {
     margin-bottom: 10px;
-    color: #558257;
+    color: var(--primary-bg-color);
 }
 
 .intro p {
     color: var(--subtext-color);
     line-height: 1.6;
 }
+
 /* Container Styles */
 .container {
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--container-bg-color);
+    box-shadow: 0 0 10px var(--container-shadow-color);
     margin: 2% auto 6%;
     max-width: 1200px;
     padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
 }
 
-
-/* Exercise Styles */
-.exercise {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+/* Recipe Card Styles */
+.recipe {
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.333% - 40px); /* 3 cards per row with 20px gap */
-    margin-bottom: 20px;
     padding: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.exercise:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.recipe h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.recipe p {
+    color: var(--subtext-color);
+    margin-bottom: 10px;
+}
+
+.recipe p strong {
+    color: var(--text-color);
+}
+
+.recipe:hover {
     transform: translateY(-5px);
-}
-
-.exercise h2 {
-    color: #333;
-    margin: 0 0 10px;
-}
-
-.exercise p {
-    color: #666;
-    margin: 5px 0;
-}
-
-.exercise a {
-    color: #4CAF50;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.exercise a:hover {
-    color: #45a049;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Error Message Styles */
-#exerciseList p {
-    color: rgb(0, 0, 0);
-    text-align: left;
+#recipeList p {
+    color: var(--text-color);
+    text-align: center;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 10% auto 8%;
+        padding: 15px;
+    }
+
+    .recipe {
+        flex: 1 1 100%;
+    }
+
+    .intro {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
 /* Footer styles */
 footer {
     background-color: #558257;
