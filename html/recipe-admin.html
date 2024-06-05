@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Habits</title>
+    <link rel="stylesheet" href="../css/style4.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Healthy Habits</h2>
+        <nav class="navigation">
+            <a href="homepage_admin.html">Home</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1>Add Recipe</h1>
+        <p>Submit a new healthy meal to enhance your fitness routine</p>
+    </section>
+
+    <div class="container">
+        <form id="recipeForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredient">Ingredient:</label>
+                <textarea id="ingredient" name="ingredient" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                  <option value="">Select a category</option>
+                  <option value="High-calorie diet with balanced nutrients.">High-calorie diet with balanced nutrients.</option>
+                  <option value="Maintenance diet with balanced nutrients.">Maintenance diet with balanced nutrients.</option>
+                  <option value="Low-calorie diet with balanced nutrients.">Low-calorie diet with balanced nutrients.</option>
+                </select>
+              </div>
+        
+            <button type="submit">Add New Recipe</button>   
+        </form>
+    </div>
+    <div id="responseMessage"></div> <!-- Response message not working -->
+    <script src="../js/recipe.js" defer></script>
+
+    <footer>
+        <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
