@@ -11,12 +11,27 @@
 
 <body>
     <header>
-        <h2 class="logo">Healthy Habits</h2>
+        <h2 class="logo">
+            <span class="Admin">Healthy</span>
+            <span class="Dashboard">Habits</span>
+        </h2>
         <nav class="navigation">
             <a href="homepage_admin.html">Home</a>
-            <a href="contactus.html">Contact Us</a>
-            <a href="AboutUs.html">About Us</a>
-            <button class="btnLogin-popup">Login</button>
+            <div class="dropdown">
+                <button class="dropbtn">Exercises</button>
+                <div class="dropdown-content">
+                    <a href="exercise-admin.html">Add Exercise</a>
+                    <a href="#">Display Exercise</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Recipes</button>
+                <div class="dropdown-content">
+                    <a href="#">Add Recipe</a>
+                    <a href="#">Display Recipe</a>
+                </div>
+            </div>
+            <button class="btnLogin-popup">Logout</button>
         </nav>
     </header>
 

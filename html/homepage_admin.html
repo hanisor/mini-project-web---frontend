@@ -7,16 +7,36 @@
     <link rel="stylesheet" href="../css/style9.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Welcome to Admin Dashboard</h1>
+    <header>
+        <h2 class="logo">
+            <span class="Admin">Healthy</span>
+            <span class="Dashboard">Habits</span>
+        </h2>
+        <nav class="navigation">
+            <a href="homepage_admin.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Exercises</button>
+                <div class="dropdown-content">
+                    <a href="exercise-admin.html">Add Exercise</a>
+                    <a href="#">Display Exercise</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Recipes</button>
+                <div class="dropdown-content">
+                    <a href="#">Add Recipe</a>
+                    <a href="#">Display Recipe</a>
+                </div>
+            </div>
+            <button id="logout-btn" class="btnLogout-popup">Logout</button>
+        </nav>
     </header>
 
     <section class="intro">
         <h1>Admin Dashboard</h1>
-        <p>Manage your platform effectively by adding exercises, recipes, and more.</p>
+        <p>Manage your platform effectively by adding exercises and recipes</p>
     </section>
     
-
     <div class="container">
         <div class="card">
             <h2>Display Exercise</h2>
@@ -43,5 +63,8 @@
     <footer>
         <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/logout.js"></script>
 </body>
 </html>
