@@ -78,7 +78,18 @@ p {
 }
 
 .wrapper {
-    width: 100%;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    padding: 40px;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 6%;
+}
+
+.wrapper2 {
+    width: 70%;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     background: #fff;
