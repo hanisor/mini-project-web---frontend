@@ -14,7 +14,7 @@
     $user = "root";
 
     // Most of the time the password is empty 
-    $password = "root";
+    $password = "";
 
     // database name 
     $dbname = "healthy_habits";

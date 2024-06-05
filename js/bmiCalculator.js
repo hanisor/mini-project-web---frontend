@@ -1,27 +1,38 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Get form element
-    var form = document.getElementById('health-assessment-form');
+$(document).ready(function() {
+    $('#health-assessment-form').submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
 
-    // Add event listener to form submission
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        // Get height and weight values
+        var height = parseFloat($('#height').val());
+        var weight = parseFloat($('#weight').val());
 
-        // Serialize form data
-        var formData = new FormData(form);
+        // Calculate BMI
+        var bmi = weight / (height * height);
 
-        // Send PUT request using fetch API
-        fetch('health.php', {
-            method: 'PUT',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Update BMI and BMI status fields with the received data
-            document.getElementById('bmi').value = data.bmi;
-            document.getElementById('bmiStatus').value = data.bmiStatus;
-        })
-        .catch(error => {
-            console.error('Error:', error); // Log any errors
+        // Determine BMI status
+        var bmiStatus = getBMIStatus(bmi);
+
+        // Update BMI and BMI status fields
+        $('#bmi').val(bmi.toFixed(2));
+        $('#bmiStatus').val(bmiStatus);
+
+        // Serialize the form data
+        var formData = $(this).serialize();
+
+        // Send AJAX request to the server
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: formData,
+            success: function(response) {
+                // Handle successful response here
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                // Handle error response here
+                console.error(xhr.responseText);
+            }
         });
     });
+
 });

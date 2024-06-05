@@ -23,8 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
         $bmiStatus = getBMIStatus($bmi);
 
         // Prepare the update query with parameterized statement to prevent SQL injection
-        $updateQuery = "UPDATE user SET Height = ?, Weight = ?, BMI = ? WHERE userId = ?";
+        $updateQuery = "UPDATE user SET Height = ?, Weight = ?, BMI = ? WHERE UserId = ?";
         $stmt = $con->prepare($updateQuery);
+        
+        if (!$stmt) {
+            // Log statement preparation error
+            error_log("Failed to prepare statement: " . $con->error);
+            http_response_code(500); // Internal Server Error
+            echo json_encode(["status" => "error", "message" => "Failed to prepare update statement"]);
+            exit();
+        }
+
         $stmt->bind_param("dddi", $height, $weight, $bmi, $userId);
         
         // Execute the update query
@@ -32,7 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
             // Return BMI and BMI status as JSON response
             echo json_encode(["bmi" => $bmi, "bmiStatus" => $bmiStatus]);
         } else {
-            // Return an error response if the update query fails
+            // Log statement execution error
+            error_log("Failed to execute statement: " . $stmt->error);
             http_response_code(500); // Internal Server Error
             echo json_encode(["status" => "error", "message" => "Failed to update user data"]);
         }
