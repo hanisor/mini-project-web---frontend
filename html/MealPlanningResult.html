@@ -58,29 +58,36 @@
                         <div class="recipe-list">
                             <br>
                             <h3>Recommended Recipes:</h3>
-                            ${result.recipes.map(recipe => `
-                                <div class="recipe-box" data-description="${recipe.Description}">
-                                    <h3>${recipe.Name}</h3>
-                                    <div class="ingredient-box">
-                                        <h4>INGREDIENT: </h4>
-                                        <p>${recipe.Ingredient}</p>
+                                ${result.recipes.map(recipe => `
+                                <div class="recipe-box" data-description="${recipe.Description}" data-ingredients="${recipe.Ingredient}">
+                                <h3>${recipe.Name}</h3>
+                                <div class="ingredient-box">
+                                    <h4>INGREDIENTS: </h4>
+                                        <ul>
+                                        ${recipe.Ingredient.split(',').map(ingredient => `<li>${ingredient.trim()}</li>`).join('')}
+                                        </ul>
                                         <p>${recipe.Category}</p>
-                                    </div>
                                 </div>
-                            `).join('')}
+                                </div>
+                                `).join('')}
                         </div>
                     `;
-
                     document.querySelectorAll('.recipe-box').forEach(box => {
-                        box.addEventListener('click', () => {
-                            const description = box.getAttribute('data-description');
-                            document.getElementById('recipeDetails').innerHTML = `
-                                <h3>${box.querySelector('h3').innerText}</h3>
-                                <p>${description}</p>
-                            `;
-                            document.getElementById('recipeModal').style.display = 'block';
-                        });
+                    box.addEventListener('click', () => {
+                    const description = box.getAttribute('data-description');
+                    const descriptionItems = description.split('\n'); // Split description by new line
+
+                    // Create a list of description items
+                    const descriptionList = descriptionItems.map(item => `<li>${item.trim()}</li>`).join('');
+
+                    // Display the recipe details with a list
+                    document.getElementById('recipeDetails').innerHTML = `
+                        <h3>${box.querySelector('h3').innerText}</h3>
+                        <ul>${descriptionList}</ul>
+                        `;
+                        document.getElementById('recipeModal').style.display = 'block';
                     });
+                });
                 } else {
                     alert('Failed to fetch meal plan: ' + result.message);
                 }

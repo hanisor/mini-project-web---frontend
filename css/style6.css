@@ -345,6 +345,16 @@ footer p {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.ingredient-box ul {
+    margin: 0; /* Remove default margin */
+    padding-left: 30px; /* Add some left padding for better alignment */
+    list-style-position: inside; /* Ensure list items are aligned inside the box */
+    color: #666;
+}
+
+
+
 /* Specific styles for h4 elements */
 h4 {
     font-size: 18px;              /* Adjusts the font size */
