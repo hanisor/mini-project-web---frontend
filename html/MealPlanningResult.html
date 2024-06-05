@@ -52,8 +52,11 @@
                             ${result.recipes.map(recipe => `
                                 <div class="recipe-box">
                                     <h3>${recipe.Name}</h3>
+                                    <div class="ingredient-box">
+                                    <h4>INGREDIENT: </h4>
                                     <p>${recipe.Ingredient}</p>
-                                    <p>${recipe.Description}</p>
+                                    <p>${recipe.Category}</p>
+                                    </div>
                                 </div>
                             `).join('')}
                         </div>

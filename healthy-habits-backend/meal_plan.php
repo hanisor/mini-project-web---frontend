@@ -43,8 +43,8 @@ try {
             $mealPlan = "Low-calorie diet with balanced nutrients.";
         }
 
-        // Fetch recipes based on the meal plan description
-        $sqlFetchRecipes = "SELECT * FROM recipe WHERE Description = ?";
+        // Fetch recipes based on the meal plan category
+        $sqlFetchRecipes = "SELECT * FROM recipe WHERE Category = ?";
         $stmtRecipes = $con->prepare($sqlFetchRecipes);
         if (!$stmtRecipes) {
             throw new Exception("Prepare statement failed: " . $con->error);
