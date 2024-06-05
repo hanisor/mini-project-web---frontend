@@ -1,8 +1,12 @@
-/* Reset CSS 6 */
+/* Reset CSS 7 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
@@ -11,10 +15,8 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Shared styles for headers */
 header {
     background-color: #558257;
     color: #fff;
@@ -23,11 +25,6 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
 }
 
 .logo {
@@ -38,8 +35,8 @@ header {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;
-    font-weight: 500;
-    position: relative;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+         
 }
 
 .navigation .btnLogin-popup {
@@ -56,7 +53,6 @@ header {
     background-color: #fff;
     color: #558257;
 }
-
 .navigation a::after {
     content: '';
     position: absolute;
@@ -73,6 +69,8 @@ header {
 .navigation a:hover::after {
     transform: scaleX(1);
 }
+
+
 
 p {
     text-align: justify;
@@ -168,13 +166,14 @@ p {
     color: #162938;
 }
 
-/* Main container styles */
 main {
-    flex: 1;
+    padding-top: 80px; /* Adjust as needed to create space for the header */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    color: #fff; /* Text color */
+    padding-bottom: 70px; /* Adjust main's padding bottom to accommodate footer */
+
 }
 
 
