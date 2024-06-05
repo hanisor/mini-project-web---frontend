@@ -17,6 +17,7 @@ body {
     flex-direction: column;
 }
 
+
 header {
     background-color: #558257;
     color: #fff;
@@ -26,6 +27,7 @@ header {
     align-items: center;
     font-size: 1em;
 }
+
 
 .logo {
     font-size: 2em;

@@ -139,13 +139,13 @@ header {
 
 /* Intro section styles */
 .intro {
-    margin-top: 5%; /* Increased top margin */
+    margin-top: 2%; /* Increased top margin */
     text-align: center;
     margin-bottom: 3%;
 }
 
 .intro h1 {
-    margin-bottom: 10px;
+    margin-bottom: 2%;
     font-size: 2.5em;
     color: #558257;
     font-weight: 700; /* Bold text */
@@ -164,13 +164,13 @@ header {
     gap: 2em;
     max-width: 100%; /* Increased width for a more spacious layout */
     margin: 1em auto;
-    margin-bottom: 1%;
     padding: 1em;
     background-color: #fff; /* Changed to white for better contrast */
     border-radius: 10px; /* Softer rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly larger shadow */
     text-align: center;
 }
+
 
 .card {
     padding: 1.5em;
@@ -218,7 +218,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     border-top: 3px solid #387D5B; /* Dark green border on top */

@@ -1,12 +1,8 @@
-/* Reset CSS 7 */
+/* Reset CSS 1 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
 }
 
 body {
@@ -14,9 +10,9 @@ body {
     background-color: #f0f0f0;
     color: #333;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Ensure elements are in a column layout */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
-
 
 header {
     background-color: #558257;
@@ -26,6 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
+    
 }
 
 .logo {
@@ -37,7 +34,7 @@ header {
     text-decoration: none;
     margin-left: 20px;
     position: relative; /* Ensure the pseudo-element is positioned relative to the link */
-         
+
 }
 
 .navigation .btnLogin-popup {
@@ -54,6 +51,7 @@ header {
     background-color: #fff;
     color: #558257;
 }
+
 .navigation a::after {
     content: '';
     position: absolute;
@@ -71,27 +69,9 @@ header {
     transform: scaleX(1);
 }
 
-/* Footer styles */
-footer {
-    background-color: #558257;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 3px solid #387D5B; /* Dark green border on top */
-    font-size: 1em; /* Set consistent font size */
-}
-
-footer p {
-    margin: 0;
-    font-size: 1em; /* Set consistent font size */
-    font-weight: 400; /* Normal text weight */
-}
-
+/* Main Content Styles */
 main {
-    padding: 20px;
+    padding: 3%;
 }
 
 .intro {
@@ -108,7 +88,6 @@ main {
 .intro p {
     font-size: 1.2em;
 }
-
 
 .categories-grid {
     display: flex;
@@ -172,7 +151,7 @@ main {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.h2 {
     margin-top: 2em; /* Adjust top margin for spacing */
     font-size: 2em; /* Adjust font size */
     margin-bottom: 1em; /* Adjust bottom margin for spacing */
@@ -180,3 +159,21 @@ h2 {
     text-align: center; /* Center align the text */
 }
 
+/* Footer Styles */
+footer {
+    background-color: #558257;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid #387D5B; /* Dark green border on top */
+    font-size: 1em; /* Set consistent font size */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em; /* Set consistent font size */
+    font-weight: 400; /* Normal text weight */
+}

@@ -1,0 +1,175 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --primary-bg-color: #558257;
+    --primary-color: #fff;
+    --secondary-color: #4CAF50;
+    --hover-color: #45a049;
+    --text-color: #333;
+    --subtext-color: #666;
+    --background-color: #f0f0f0;
+    --container-bg-color: #fff;
+    --container-shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+}
+
+/* Body Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding-top: 70px; /* Adjusted for fixed header */
+}
+
+/* Header Styles */
+header {
+    align-items: center;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    display: flex;
+    font-size: 1em;
+    justify-content: space-between;
+    left: 0;
+    padding: 1em 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2em;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation a {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-left: 20px;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.navigation .btnLogin-popup {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background-color: var(--primary-color);
+    color: var(--primary-bg-color);
+}
+
+.navigation a::after {
+    background: var(--primary-color);
+    border-radius: 5px;
+    bottom: -6px;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    width: 100%;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Container Styles */
+.container {
+    background-color: var(--container-bg-color);
+    box-shadow: 0 0 10px var(--container-shadow-color);
+    margin: 7% auto 6%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Exercise Styles */
+.exercise {
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.exercise:last-child {
+    border-bottom: none;
+}
+
+.exercise:hover {
+    background-color: #f9f9f9;
+}
+
+.exercise h2 {
+    color: var(--text-color);
+    margin: 0 0 10px;
+}
+
+.exercise p {
+    color: var(--subtext-color);
+    margin: 5px 0;
+}
+
+.exercise a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.exercise a:hover {
+    color: var(--hover-color);
+}
+
+/* Error Message Styles */
+#exerciseList p {
+    color: var(--text-color);
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .navigation {
+        margin-top: 10px;
+    }
+
+    .navigation a, .navigation .btnLogin-popup {
+        margin-left: 10px;
+    }
+
+    .container {
+        margin: 10% auto 8%;
+        padding: 15px;
+    }
+
+    .exercise {
+        padding: 15px 0;
+    }
+}

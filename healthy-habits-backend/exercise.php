@@ -143,35 +143,48 @@ else if ($_SERVER["REQUEST_METHOD"] == "PUT") {
     }
 }
 
+// Handle GET requests
 else if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    // Check if parentId parameter is provided
-    if(isset($_GET['GoalId'])) {
-        // Sanitize and store the parentId parameter
+    // Check if a specific GoalId is provided
+    if (isset($_GET['GoalId'])) {
         $GoalId = mysqli_real_escape_string($con, $_GET['GoalId']);
 
-        // Query to fetch caregiver details based on parentId
         $query = $con->query("SELECT * FROM exercise WHERE GoalId = '$GoalId'");
 
-        // Check if any row is returned
         if ($query->num_rows > 0) {
-            // Array to store all children data
             $exerciseData = array();
 
-            // Loop through the result set and fetch all rows
             while ($row = $query->fetch_assoc()) {
-                // Append each row to the children data array
                 $exerciseData[] = $row;
             }
 
-            // Return the children data as JSON response
+            http_response_code(200);
             echo json_encode($exerciseData);
         } else {
-            // No children found for the provided parentId
-            echo json_encode(array('error' => 'No exercise found for the provided exerciseId'));
+            http_response_code(404);
+            echo json_encode(array('error' => 'No exercises found for the provided GoalId'));
         }
     } else {
-        // No parentId parameter provided
-        echo json_encode(array('error' => 'goalid parameter is missing'));
+        // No GoalId provided, fetch all exercises
+        try {
+            $sql = "SELECT * FROM exercise";
+            $result = mysqli_query($con, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                $exercises = array();
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $exercises[] = $row;
+                }
+                http_response_code(200);
+                echo json_encode($exercises);
+            } else {
+                http_response_code(404);
+                echo json_encode(array('message' => 'No exercises found'));
+            }
+        } catch (Exception $e) {
+            http_response_code(500);
+            echo json_encode(array('error' => 'Error occurred: ' . $e->getMessage()));
+        }
     }
 }
 
