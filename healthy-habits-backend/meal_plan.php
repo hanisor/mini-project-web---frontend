@@ -81,7 +81,7 @@ echo json_encode($response);
 
 function calculateBMI($weight, $height)
 {
-    $bmi = $weight / (($height / 100) ** 2);
+    $bmi = $weight / (($height) ** 2);
     return number_format((float)$bmi, 2, '.', '');
 }
 ?>
