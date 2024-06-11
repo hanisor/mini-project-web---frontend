@@ -1,0 +1,222 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --primary-bg-color: #558257;
+    --primary-color: #fff;
+    --secondary-color: #4CAF50;
+    --hover-color: #45a049;
+    --text-color: #333;
+    --subtext-color: #666;
+    --background-color: #f0f0f0;
+    --container-bg-color: #fff;
+    --container-shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+}
+
+.logo {
+    font-size: 2em;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation a {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-left: 20px;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.navigation .btnLogin-popup {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation .btnLogin-popup:hover {
+    background-color: var(--primary-color);
+    color: var(--primary-bg-color);
+}
+
+.navigation a::after {
+    background: var(--primary-color);
+    border-radius: 5px;
+    bottom: -6px;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    width: 100%;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Intro Styles */
+.intro {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 0 10px var(--container-shadow-color);
+    margin: 1em auto 2em;
+    width: 100%;
+    max-width: 80%;
+}
+
+.intro h1 {
+    margin-bottom: 10px;
+    color: var(--primary-bg-color);
+}
+
+.intro p {
+    color: var(--subtext-color);
+    line-height: 1.6;
+}
+
+/* Container Styles */
+.container {
+    background-color: var(--container-bg-color);
+    box-shadow: 0 0 10px var(--container-shadow-color);
+    margin: 2% auto 6%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Form Styles */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-bg-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--primary-bg-color);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Footer styles */
+footer {
+    background-color: #558257;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid #387D5B; /* Dark green border on top */
+    font-size: 1em; /* Set consistent font size */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em; /* Set consistent font size */
+    font-weight: 400; /* Normal text weight */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 10% auto 8%;
+        padding: 15px;
+    }
+
+    .intro {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}
+
+.reset-password-heading {
+    margin-top: 1px;
+}
