@@ -7,18 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Habits</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h2 class="logo">Healthy Habits</h2>
+        <a href="homepage.html" class="logo-link">
+            <h2 class="logo">
+                <span class="healthy">Healthy</span>
+                <span class="habits">Habits</span>
+            </h2>
+        </a>
+
         <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#">Personal Health Assessment</a>
-            <a href="#">Meal Planning</a>
-            <a href="#">Educational Resources</a>
-            <a href="#">Contact Us</a>
-            <a href="#">About Us</a>
+            <a href="homepage2.html">Personal Health Assessment</a>
+            <a href="mealplanning.html">Meal Planning</a>
+            <a href="eduresources.html">Educational Resources</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="profile.html" class="user-profile-icon">
+                <i class="fas fa-user"></i>
+            </a>
             <button class="btnLogin-popup">Logout</button>
         </nav>
     </header>
@@ -27,14 +37,15 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">User Profile</h4>
-                <form class="form-sample">
+                <form class="form-sample" id="user-profile-form">
+                    <input type="hidden" id="userId" name="UserId">
                     <p class="card-description">Personal info</p>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" id="name" name="Name" readonly>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +53,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" id="username" name="Username" readonly>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +63,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Gender</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control">
+                                    <select class="form-control" id="gender" name="Gender" disabled>
                                         <option>Male</option>
                                         <option>Female</option>
                                     </select>
@@ -63,7 +74,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Date of Birth</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" placeholder="dd/mm/yyyy" />
+                                    <input class="form-control" placeholder="dd/mm/yyyy" id="date_of_birth" name="Date_Of_Birth" readonly>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +84,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" id="email" name="Email" readonly>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +96,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Height (m)</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" id="height" name="Height" readonly>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +104,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Weight (kg)</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" id="weight" name="Weight" readonly>
                                 </div>
                             </div>
                         </div>
@@ -103,22 +114,15 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">BMI</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Goals</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" id="bmi" name="BMI" readonly>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <button type="submit" class="btn">Update Profile</button>
+                            <button type="button" class="btn" id="enable-edit-btn">Update Profile</button>
+                            <button type="submit" class="btn" id="save-btn" style="display: none;">Save Changes</button>
                         </div>
                     </div>
                 </form>
@@ -126,11 +130,74 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-
     <footer>
         <p>&copy; 2024 Healthy Habits. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const userProfileForm = document.getElementById('user-profile-form');
+            const enableEditButton = document.getElementById('enable-edit-btn');
+            const saveButton = document.getElementById('save-btn');
+            const inputs = userProfileForm.querySelectorAll('input, select');
+
+            // Fetch user data and pre-fill the form
+            fetch('../healthy-habits-backend/register_process.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const user = data[0]; // Assuming you want the first user data
+                        document.getElementById('userId').value = user.UserId;
+                        document.getElementById('name').value = user.Name;
+                        document.getElementById('username').value = user.Username;
+                        document.getElementById('gender').value = user.Gender;
+                        document.getElementById('date_of_birth').value = user.Date_Of_Birth;
+                        document.getElementById('email').value = user.Email;
+                        document.getElementById('height').value = user.Height || '';
+                        document.getElementById('weight').value = user.Weight || '';
+                        document.getElementById('bmi').value = user.BMI || '';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                });
+
+            enableEditButton.addEventListener('click', function() {
+                inputs.forEach(input => input.removeAttribute('readonly'));
+                userProfileForm.querySelector('select').removeAttribute('disabled');
+                enableEditButton.style.display = 'none';
+                saveButton.style.display = 'inline-block';
+            });
+
+            userProfileForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                if (confirm('Are you sure you want to update your profile?')) {
+                    const formData = new FormData(this);
+
+                    fetch('../healthy-habits-backend/register_process.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert(data.message);
+                            inputs.forEach(input => input.setAttribute('readonly', true));
+                            userProfileForm.querySelector('select').setAttribute('disabled', true);
+                            enableEditButton.style.display = 'inline-block';
+                            saveButton.style.display = 'none';
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error updating user data:', error);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -67,6 +67,18 @@ header {
 .navigation a:hover::after {
     transform: scaleX(1);
 }
+
+.logo-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent element */
+}
+
+.logo-link:visited,
+.logo-link:hover,
+.logo-link:active {
+    color: inherit; /* Ensure link states inherit color */
+    text-decoration: none; /* Ensure link states have no underline */
+}
 /* Style the navigation */
 .navigation {
     display: flex;

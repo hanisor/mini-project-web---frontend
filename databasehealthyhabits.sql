@@ -21,16 +21,6 @@ CREATE TABLE Admin (
     Status VARCHAR(50)
 );
 
-CREATE TABLE Exercise (
-    ExerciseId INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(255),
-    Description TEXT,
-    Link VARCHAR(255),
-    AdminId INT,
-    GoalId INT,
-    FOREIGN KEY (GoalId) REFERENCES Goal(GoalId)
-    FOREIGN KEY (AdminId) REFERENCES Admin(AdminId)
-);
 
 
 CREATE TABLE Goal (
@@ -64,5 +54,15 @@ CREATE TABLE Contact_Us (
     message TEXT NOT NULL
 );
 
+CREATE TABLE Exercise (
+    ExerciseId INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255),
+    Description TEXT,
+    Link VARCHAR(255),
+    AdminId INT,
+    GoalId INT,
+    FOREIGN KEY (GoalId) REFERENCES Goal(GoalId),
+    FOREIGN KEY (AdminId) REFERENCES Admin(AdminId)
+);
 
 

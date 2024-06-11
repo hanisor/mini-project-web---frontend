@@ -74,6 +74,20 @@ p {
     font-size: 1.2em;
 }
 
+.logo-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent element */
+}
+
+.logo-link:visited,
+.logo-link:hover,
+.logo-link:active {
+    color: inherit; /* Ensure link states inherit color */
+    text-decoration: none; /* Ensure link states have no underline */
+}
+
+
+
 main {
     flex: 1; /* Allow main to grow and take up available space */
     padding-top: 100px; /* Adjust padding top */
@@ -178,6 +192,10 @@ main {
     text-align: center;
     margin-bottom: 40px;
 }
+
+
+
+
 
 footer {
     background-color: #558257;

@@ -11,13 +11,20 @@
     $socket = "";
 
     // database username
+    //$user = "b032110405";
     $user = "root";
 
+
     // Most of the time the password is empty 
+    //$password = "021217-14-0358";
     $password = "";
 
+
     // database name 
+    //$dbname = "student_b032110405";
     $dbname = "healthy_habits";
+
+
 
     // Connection mysqli carry all define above variable to phpadmin
     // die - php immediately stop the function
