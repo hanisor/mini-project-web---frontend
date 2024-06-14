@@ -12,31 +12,50 @@ document.getElementById('resetPasswordForm').addEventListener('submit', function
         return;
     }
 
-    // Create a PUT request to update the password
+    // Create a POST request to update the password
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/../healthy-habits-backend/forgot_password.php');
+    var url = 'http://localhost/xampp/mini-project-web---frontend/healthy-habits-backend/forgot_password.php';
+    xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
-    // Define the data to be sent in JSON format
-    var data = {
+    // Prepare the data to be sent
+    var data = JSON.stringify({
         email: email,
         password: newPassword
-    };
+    });
 
-    // Convert the data to a JSON string
-    var jsonData = JSON.stringify(data);
+    // Debugging: Log the data being sent
+    console.log("Sending data:", data);
 
     // Send the request
-    xhr.send(jsonData);
+    xhr.send(data);
 
     // Handle the response
     xhr.onload = function() {
+        console.log("Response status:", xhr.status);
+        console.log("Response text:", xhr.responseText);
+
         if (xhr.status === 200) {
-            alert('Password updated successfully!');
-            // Optionally, redirect the user to another page
-            window.location.href = '/../html/index.html';
+            try {
+                var response = JSON.parse(xhr.responseText);
+                if (response.status === 'success') {
+                    alert('Password updated successfully!');
+                    // Optionally, redirect the user to another page
+                    window.location.href = '../html/index.html';
+                } else {
+                    alert('Failed to update password. ' + response.message);
+                }
+            } catch (e) {
+                console.error("Parsing error:", e);
+                alert('Failed to update password. Please try again.');
+            }
         } else {
             alert('Failed to update password. Please try again.');
         }
+    };
+
+    xhr.onerror = function() {
+        console.error("Request error:", xhr.statusText);
+        alert('An error occurred during the request.');
     };
 });
